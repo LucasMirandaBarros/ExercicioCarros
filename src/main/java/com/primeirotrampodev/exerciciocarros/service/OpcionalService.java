@@ -9,7 +9,7 @@ import java.util.List;
 @Service
 public class OpcionalService {
 
-    public List<Opcional> getOpicionais (List<Integer> opcionalIdlist){
+    public List<Opcional> getOpicionais () {
 
         Opcional opcional1 = new Opcional();
         opcional1.setId(1);
@@ -51,6 +51,10 @@ public class OpcionalService {
         opcional10.setId(10);
         opcional10.setNome("Controle de estabilidade");
 
+        return getOpicionais();
+    }
+
+    public List<Opcional> metodoDeRetorno(List<Integer> opcionalIdlist){
 
        List<Opcional> opcionalList = new ArrayList<>();
 
@@ -58,7 +62,7 @@ public class OpcionalService {
             Integer idOpcional = opcionalIdlist.get(cont);
 
             if(idOpcional.equals(1)){
-                opcionalList.add(opcional1);
+                opcionalList.add(getOpicionais().get(op));
             } else if (idOpcional.equals(2)) {
                 opcionalList.add(opcional2);
             } else if (idOpcional.equals(3)) {
